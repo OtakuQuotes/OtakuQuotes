@@ -41,7 +41,7 @@ async def get_random_quote(request):
     if quote is None:
         return json({'status': 404, "error": "Quote Not Found"}, status=404)
     else:
-        await request.app.redis.set(f'quote_id:{random_id}', ujson.dumps(dict(quote)))
+        await request.app.redis.set(f'quote_id:{random_id}', ujson.dumps(dict(quote)), expire=300)
         
     return json({'status': 200,
         'quotes': {
