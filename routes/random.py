@@ -17,7 +17,7 @@ async def get_random_quote(request):
     async with request.app.postgresql.acquire() as conn:
         quote_count = await request.app.redis.get('quotecount')
         if quote_count is None:
-            quote_count = await conn.fetchval('''SELECT count(*) AS exact_count FROM otakuquotes.quotes''')
+            quote_count = await conn.fetchval('''SELECT max(quote_id) FROM otakuquotes.quotes''')
             await request.app.redis.set('quotecount', quote_count)
             # Grab rows from postgresql
             # Update Redis quote_count
