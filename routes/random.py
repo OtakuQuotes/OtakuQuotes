@@ -21,7 +21,7 @@ async def get_random_quote(request):
             await request.app.redis.set('quotecount', quote_count)
             # Grab rows from postgresql
             # Update Redis quote_count
-        random_id = rng.randint(1, int(quote_count))
+        random_id = rng.randint(1, int(quote_count) - 1)
         quote = await request.app.redis.get(f'quote_id:{random_id}')
 
         if quote is None:
@@ -39,6 +39,7 @@ async def get_random_quote(request):
             quote = ujson.loads(quote)
         
     if quote is None:
+        print(random_id)
         return json({'status': 404, "error": "Quote Not Found"}, status=404)
     else:
         await request.app.redis.set(f'quote_id:{random_id}', ujson.dumps(dict(quote)), expire=300)
