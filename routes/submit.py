@@ -37,7 +37,7 @@ async def post_quote(request):
 
         async with request.app.postgresql.acquire() as conn:
             
-            prepstatement = await conn.execute('''
+            await conn.execute('''
                 INSERT INTO otakuquotes.pending (quote_text, char_name, anime_name, episode, submitter_name, time_stamp)
                 VALUES ($1, $2, $3, $4, $5, $6)
             ''', quote, char, anime, episode, submitter, '00:00:00')

@@ -7,7 +7,7 @@ install:
 - pip install -r requirements.txt
 - pip install requests
 script:
-- nohup python main.py &
+- python main.py &
 - pytest -v tests/
 after_script:
 - sleep 10
