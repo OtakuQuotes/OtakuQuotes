@@ -1,0 +1,14 @@
+language: python
+python:
+  - "3.6"
+services:
+  - redis-server
+install:
+  - pip install -r requirements.txt
+  - pip install requests
+script:
+  - nohup python main.py &
+  - pytest -v tests/
+after_script:
+  - sleep 10
+  - killall python
