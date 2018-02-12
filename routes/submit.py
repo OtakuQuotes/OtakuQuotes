@@ -6,7 +6,6 @@ import ujson
 from sanic.blueprints import Blueprint
 from sanic.response import json
 from sanic.response import text
-from sanic_openapi import doc
 
 verify_url = 'https://google.com/recaptcha/api/siteverify'
 secret_key = os.environ['CAPTCHA_SECRET']

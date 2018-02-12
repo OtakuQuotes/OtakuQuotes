@@ -10,7 +10,7 @@ from sanic.response import redirect
 from routes.pending import pending
 from routes.quotes import quotes
 from routes.random import random
-# from routes.submit import submit
+from routes.submit import submit
 
 
 import asyncpg
@@ -49,7 +49,7 @@ async def close_db(app, loop):
 app.blueprint(pending)
 app.blueprint(quotes)
 app.blueprint(random)
-# app.blueprint(submit)
+app.blueprint(submit)
 
 if __name__ == "__main__":
     
