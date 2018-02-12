@@ -1,14 +1,21 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 services:
-  - redis-server
+- redis-server
 install:
-  - pip install -r requirements.txt
-  - pip install requests
+- pip install -r requirements.txt
+- pip install requests
 script:
-  - nohup python main.py &
-  - pytest -v tests/
+- nohup python main.py &
+- pytest -v tests/
 after_script:
-  - sleep 10
-  - killall python
+- sleep 10
+- killall python
+deploy:
+  provider: heroku
+  api_key:
+    secure: cSBCx0T5tKMtcND1fW56WEkilp5tR9wbolForBkDckXQNaLugvq9Ej3nwTtaVmTq/Cvs7Wkk08zUQvnR5cBtxUUCu9clrR1P3sBLNqvAItQRH6BiVQG8VfsEldMvxxjxXOBABdjT6/eXAzVSqoHg2J+z09XJ1WQgMJmZGja5Oa3C6++RpCjRtVZNrF98QaTFjvsLWSR1kuyyxBJeNTqN8iGOBU8uln/pNgSIEuSbEuO6jWaML/4mokGL8b0BuEX7B/XX4ieueqoXUguuaOx78vZGLsVLIe6CW1eNfqYHPPXXnxTgzgU5HFje9NFzkbTqoQOiJ3ad056dTcEj3W0I3qH6TAY3p7Lhg2P9CONpJkmU0fuhOe4Vjpl1g+UtLg0dwqv8RidArj3+SUc6347XZk2V5pn+K0bBvo76HVRHSILb0DhkxHHCWSwBaqOmEshvpUx8NxTLajJUXnwBn9GGa/NcQVhVcETKr7/K+i51zKZ4HcDixIc/cMVOW2eAIzvJfRIgjKrKey6yQQVhgtg20K4OJaoYb+rol3iBZexkaKJTaZtDCZtf1T+9abXdnFRSDsDWaeB1O0SrI3K6+GvDHaIuy7tH//uRMzwOd32fWudkMUPSKiC7tn49rDY+TPDu5FRM+w4z2W4fVf+H4l04hdtnYIFB41D4ub3cqUa5dvo=
+  app: otakuquotes
+  on: master
+  run: python main.py
