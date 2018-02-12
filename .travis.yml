@@ -17,6 +17,6 @@ deploy:
   provider: heroku
   api_key:
     secure: FLe6Xo8SQG7PbcUQzMdxRIiqzDF9XYIzUmHmeWlQ2WtUrnHXMsgg/QzhfPWuckbeiQByHNwoREmyS+8aqCmgQEzqrCfJ9RDPi+ZdyP71akF/YbjkqcCmkMWvT83Jm1HKyCtiOCswMpA8tLUQpobqMZERsiXw/zlV+yKA+5HfYK0glDTnwtdpOoiFxvki+Mg0n79i0gQmwxdHHivBShV0wFkZt2ztLGDZ1lQPvRMioKLuCCCkX3RblhDIOXLReiJTLA+z0RkiEMMqKeTO4j3rCIZkvSFuR9DF9SVRqAeXvt8GPn/EG7aMyizZrFk86BAWKzAXGKOdih0leAdeyEttInxrUeZYWYbqYmaaoUFzRPIPMAy99zQtjPRD6LP6a87RHMm24hdQE7HeMo5heeftn2WQ1oxAXzqMvu3wcbL+GZ42/+8E7y6y/gTJMO+t/fJRzCbD2+DpPey35cszRLSjSj8Oow8NT6v55Qpj0gAgIxRl/+jaC9Xv7tdEAq+ZEFR+dSuV2ULrVUnMxkTUWla4cXFLOWDrtETzWdg32risxijB/gbXhAdzyxeI6L7JPMQGJwkZA83YSJ7o7f+sdN+db+e/EmNcJJKWcNCWmxgcvULNTbEya0Db0MlRaVjrVrLgXrOMeyZiAnNpVhwef1wAy7kimPfFeedNl1CNMVhrIVg=
-  app: OtakuQuotes
+  app: otakuquotes
   on:
     repo: OtakuQuotes/OtakuQuotes
