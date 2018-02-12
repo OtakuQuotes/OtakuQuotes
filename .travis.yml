@@ -20,4 +20,3 @@ deploy:
   app: otakuquotes
   on:
     repo: OtakuQuotes/OtakuQuotes
-  run: "python main.py"
