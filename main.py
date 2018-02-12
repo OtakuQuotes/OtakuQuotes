@@ -1,3 +1,4 @@
+import argparse
 import os
 
 import aiohttp
@@ -19,7 +20,7 @@ app = Sanic()
 
 @app.route("/")
 async def test(request):
-    return 
+    return redirect('https://github.com/OtakuQuotes/OtakuQuotes')
 
 @app.route("/docs")
 async def docs(request):
@@ -51,4 +52,9 @@ app.blueprint(random)
 # app.blueprint(submit)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+    
+    parser = argparse.ArgumentParser(description='Starting OtakuQuotes')
+    parser.add_argument('-p', '--port', type=int, default=8080, help='Port to run on.')
+    args = parser.parse_args()
+
+    app.run(host="0.0.0.0", port=args.ports)
