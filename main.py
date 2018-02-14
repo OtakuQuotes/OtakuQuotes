@@ -55,7 +55,7 @@ app.blueprint(submit)
 if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description='Starting OtakuQuotes')
-    parser.add_argument('-p', '--port', type=int, default=os.environ.get('PORT', 80), help='Port to run on.')
+    parser.add_argument('-p', '--port', type=int, default=os.environ.get('PORT', 8080), help='Port to run on.')
     args = parser.parse_args()
 
     app.run(host="0.0.0.0", port=args.port)
