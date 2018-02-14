@@ -63,7 +63,7 @@ class Navmenu extends Component {
                     <div className={openstate}>
                         <div className="navbar-end">
                             <Link to='/about' className="navbar-item is-dark">About</Link>
-                            <Link to='/docs' className="navbar-item is-dark">Docs</Link>
+                            <a href='/docs' className="navbar-item is-dark">Docs</a>
                             <Link to='/submit' className="navbar-item is-dark">Submit</Link>
                             <span className="navbar-item">
                             <a className="button is-success" href="https://github.com/xNinjaKittyx/OtakuQuotes">

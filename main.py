@@ -4,8 +4,8 @@ import os
 import aiohttp
 
 from sanic import Sanic
-from sanic.response import json
-from sanic.response import redirect
+from sanic import response
+from sanic.exceptions import NotFound
 
 from routes.pending import pending
 from routes.quotes import quotes
@@ -18,15 +18,9 @@ import aioredis
 
 app = Sanic()
 
-app.static('/', "./client/build/")
-
-# @app.route("/")
-# async def test(request):
-#     return redirect('https://github.com/OtakuQuotes/OtakuQuotes')
-
 @app.route("/docs")
 async def docs(request):
-    return redirect('https://otakuquotes.docs.apiary.io')
+    return response.redirect('https://otakuquotes.docs.apiary.io')
 
 @app.listener('before_server_start')
 async def setup_db(app, loop):
@@ -47,11 +41,17 @@ async def close_db(app, loop):
     await app.redis.wait_closed()
     await app.postgresql.close()
 
-
 app.blueprint(pending)
 app.blueprint(quotes)
 app.blueprint(random)
 app.blueprint(submit)
+
+@app.exception(NotFound)
+async def this404(request, exception):
+    try:
+        return await response.file('./client/build/' + request.path)
+    except (NotFound, FileNotFoundError):
+        return await response.file('./client/build/index.html')
 
 if __name__ == "__main__":
     
