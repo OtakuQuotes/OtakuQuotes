@@ -18,6 +18,11 @@ import aioredis
 
 app = Sanic()
 
+
+@app.route("/")
+async def home(request):
+    return await response.file('./client/build/index.html')
+
 @app.route("/docs")
 async def docs(request):
     return response.redirect('https://otakuquotes.docs.apiary.io')
