@@ -1,0 +1,97 @@
+@import 'https://fonts.googleapis.com/css?family=Catamaran:300,400,500';
+
+html { 
+    background: #d8d8d8 url('/img/bg.png') repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+body {
+  font-family: "Catamaran", "Helvetica", "Arial", sans-serif;
+}
+
+/*#heroback {*/
+    /*background: transparent;*/
+/*}*/
+
+.navigation {
+    background: #d8d8d8 url('/img/bg.png') repeat;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+}
+
+.controltop {
+    margin-top: 10px;
+}
+
+.white {
+    color: #d8d8d8;
+}
+
+.white:hover {
+    background-color: transparent !important;
+    color: white !important;
+}
+
+.is-mainbutton{
+    background: #568cf9;
+    color: white;
+}
+.is-mainbutton:hover{
+    background: #407af9;
+    color: white;
+}
+.is-secondbutton{
+    background: lightgray;
+    color: black;
+}
+.is-secondbutton:hover{
+    background: #bdbdbd;
+    color: black;
+}
+
+.topkek {
+    height: 70px;
+    transition: opacity 0.8s;
+    opacity: 1;
+}
+
+.topkekhide {
+    height: 70px;
+    opacity: 0;
+    pointer-events:none;
+}
+
+.navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+}
+
+.thumbcontainer {
+    height: 64px;
+    width: 64px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.thumbnail {  
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

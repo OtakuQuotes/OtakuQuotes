@@ -18,6 +18,8 @@ import aioredis
 
 app = Sanic()
 
+app.static('/', "./client/build/")
+
 @app.route("/")
 async def test(request):
     return redirect('https://github.com/OtakuQuotes/OtakuQuotes')
@@ -45,7 +47,6 @@ async def close_db(app, loop):
     await app.redis.wait_closed()
     await app.postgresql.close()
 
-app.static('/favicon.ico', "./static/favicon.ico")
 
 app.blueprint(pending)
 app.blueprint(quotes)

@@ -1,1 +1,1 @@
-web: python main.py
+web: python -m sanic main.app --host=0.0.0.0 --port=$PORT
