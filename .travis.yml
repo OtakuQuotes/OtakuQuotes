@@ -1,18 +1,28 @@
 language: python
 python:
-- '3.6'
+  - '3.6'
+node_js:
+  - "node"
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+    - node_modules
+
+
 services:
-- redis-server
+  - redis-server
 install:
-- pip install -r requirements.txt
-- pip install requests
+  - pip install -r requirements.txt
+  - pip install requests
+  - cd client && npm install && npm run build && cd ..
 script:
-- python main.py &
-- sleep 5
-- pytest -v tests/
+  - python main.py &
+  - sleep 5
+  - pytest -v tests/  
 after_script:
-- sleep 10
-- killall python
+  - sleep 10
+  - killall python
 deploy:
   provider: heroku
   api_key:

@@ -20,9 +20,9 @@ app = Sanic()
 
 app.static('/', "./client/build/")
 
-@app.route("/")
-async def test(request):
-    return redirect('https://github.com/OtakuQuotes/OtakuQuotes')
+# @app.route("/")
+# async def test(request):
+#     return redirect('https://github.com/OtakuQuotes/OtakuQuotes')
 
 @app.route("/docs")
 async def docs(request):
