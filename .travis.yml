@@ -29,3 +29,5 @@ deploy:
   app: otakuquotes
   on:
     repo: OtakuQuotes/OtakuQuotes
+  run:
+    - "cd client && npm install && npm run build && cd .."
