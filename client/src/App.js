@@ -75,20 +75,20 @@ const About = () => (
     </section>
 );
 
-const Docs = () => (
-    <section className="hero">
-        <div className="hero-body">
-            <div className="container has-text-centered is-dark">
-                <h1 className="is-size-1 title">
-                    501
-                </h1>
-                <h1 className="is-size-4 subtitle">
-                    Docs aren't here yet. But you can visit <a href="https://github.com/xNinjaKittyx/OtakuQuotes">GitHub</a> for the temporary solution.
-                </h1>
-            </div>
-        </div>
-    </section>
-);
+// const Docs = () => (
+//     <section className="hero">
+//         <div className="hero-body">
+//             <div className="container has-text-centered is-dark">
+//                 <h1 className="is-size-1 title">
+//                     501
+//                 </h1>
+//                 <h1 className="is-size-4 subtitle">
+//                     Docs aren't here yet. But you can visit <a href="https://github.com/xNinjaKittyx/OtakuQuotes">GitHub</a> for the temporary solution.
+//                 </h1>
+//             </div>
+//         </div>
+//     </section>
+// );
 
 const NoMatch = () => (
     <section className="hero">
