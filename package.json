@@ -1,0 +1,8 @@
+{
+    "name": "otakuquotes",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "postinstall": "cd client && npm i && npm run build"
+    }
+}
