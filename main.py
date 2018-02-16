@@ -46,6 +46,11 @@ async def close_db(app, loop):
     await app.redis.wait_closed()
     await app.postgresql.close()
 
+@app.middleware('response')
+async def print_on_response(request, response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Headers"] = "Origin, X-Requested-With, Content-Type, Accept"
+
 app.blueprint(pending)
 app.blueprint(quotes)
 app.blueprint(random)
