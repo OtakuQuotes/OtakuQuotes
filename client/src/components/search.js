@@ -48,7 +48,7 @@ class Search extends Component {
         axios.get(`/api/quotes?tags=${query}`)
         .then((response) => {
             this.setState({list: response.data.quotes}, function(){
-            console.log(this.state);
+            // console.log(this.state);
             });
         })
         .catch((err) => {

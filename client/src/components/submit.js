@@ -235,7 +235,8 @@ class Submit extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="column is-5">
+                    <div className="column is-1"></div>
+                    <div className="column is-4">
                         <br />
                         <h2 className="subtitle">Submission Guidelines:</h2>
                         <br />

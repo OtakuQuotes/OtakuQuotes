@@ -25,7 +25,7 @@ class Random extends Component {
                 this.setState({
                     quotes: d, transitionFade: true
                 })
-                console.log(this.state);
+                // console.log(this.state);
             })
     }
 
