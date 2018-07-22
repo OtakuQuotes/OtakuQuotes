@@ -1,5 +1,7 @@
 # OtakuQuotes
 
+No longer in use: No longer up in production. Project hasn't been worked on in a long time. Sorry!
+
 Website and REST API for Anime/Manga Quotes.
 
 Recreated from Scratch using Python's Sanic Backend.
@@ -35,3 +37,8 @@ small payment options to keep the servers alive.
 ## Development
 
 WIP
+
+## Screenshots
+
+![Home](/screenshot1.jpg?raw=true)
+![Submission](/screenshot2.jpg?raw=true)
