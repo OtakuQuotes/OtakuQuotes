@@ -40,5 +40,5 @@ WIP
 
 ## Screenshots
 
-![Home](/screenshot1.jpg?raw=true)
-![Submission](/screenshot2.jpg?raw=true)
+![Home](/screenshot1.png?raw=true)
+![Submission](/screenshot2.png?raw=true)
